@@ -1,14 +1,33 @@
 <roundcube:include file="includes/layout.html" />
 
-<h1 class="voice"><roundcube:object name="productname" /> <roundcube:label name="login" /></h1>
+<h1 class="voice">
+  <roundcube:object name="productname" /> <roundcube:label name="login" />
+</h1>
 
 <div id="layout-content" class="selected no-navbar" role="main">
-	<roundcube:form id="login-form" name="login-form" method="post" class="propform">
-		<roundcube:object name="loginform" form="login-form" size="40" submit=true />
-	</form>
+  <roundcube:object
+    name="logo"
+    src="https://res.cloudinary.com/dgpuwpmjk/image/upload/v1706063380/mailtoshi/Mailtoshi-logo_dark-bg-gradient_qamhxx.svg"
+    data-src-small="0"
+    id="logo"
+    alt="Logo"
+  />
+  <roundcube:form
+    id="login-form"
+    name="login-form"
+    method="post"
+    class="propform"
+  >
+    <roundcube:object
+      name="loginform"
+      form="login-form"
+      size="40"
+      submit="true"
+    />
+  </roundcube:form>
 </div>
 
 <noscript>
-	<p class="noscriptwarning"><roundcube:label name="noscriptwarning" /></p>
+  <p class="noscriptwarning"><roundcube:label name="noscriptwarning" /></p>
 </noscript>
 <roundcube:include file="includes/footer.html" />
