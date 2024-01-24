@@ -31,7 +31,6 @@ git checkout v1.5-beta
 ```
 
 
-
 #### 2. Update your Settings
 Change the skin in Roundcube's `Settings/User Interface` to `Elastic Dark`.
 
