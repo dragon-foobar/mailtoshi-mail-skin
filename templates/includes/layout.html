@@ -13,31 +13,62 @@
 <roundcube:object name="doctype" value="html5" />
 <roundcube:if condition="!env:framed || env:extwin" />
 <html>
-<roundcube:else />
-<html class="iframe">
-<roundcube:endif />
-<head>
-	<script>document.cookie = 'colorMode=light; expires=Session; path=/';</script>
-	<roundcube:object name="meta" />
-	<roundcube:object name="links" />
-	<link rel="stylesheet" href="/deps/bootstrap.min.css">
-	<roundcube:if condition="config:devel_mode" />
-		<link rel="stylesheet/less" href="/styles/styles.less">
-		<roundcube:link rel="stylesheet/less" href="/styles/print.less" condition="env:action == 'print'" />
-		<script src="/deps/less.min.js" data-env="development"></script>
-	<roundcube:else />
-		<link rel="stylesheet" href="/styles/styles.min.css">
-		<link rel="stylesheet" href="/styles/styles-dark.css" id="stylesheet-dark" >
-		<roundcube:link rel="stylesheet" href="/styles/print.min.css" condition="env:action == 'print'" />
-	<roundcube:endif />
-	<script>var rcmail_editor_settings = {content_css: "skins/elastic-dark/styles/oxide-dark.css"};</script>
-	<style>
-		.message-toggle-dark::before {content: "\f6c3";}
-		.message-toggle-light::before {content: "\f185";}
-	</style>
-	<script src="/message-light-mode.js"></script>
-</head>
-<body class="task-<roundcube:exp expression="env:error_task ?: env:task ?: 'error'"> action-<roundcube:exp expression="asciiwords(env:action, true, '-') ?: 'none'">">
-	<roundcube:if condition="!env:framed || env:extwin" />
-		<div id="<roundcube:exp expression="env:action == 'print' ? 'print-' : ''">layout">
-	<roundcube:endif />
+  <roundcube:else />
+  <html class="iframe">
+    <roundcube:endif />
+    <head>
+      <script>
+        document.cookie = "colorMode=light; expires=Session; path=/";
+      </script>
+      <roundcube:object name="meta" />
+      <roundcube:object name="links" />
+      <link rel="stylesheet" href="/deps/bootstrap.min.css" />
+      <roundcube:if condition="config:devel_mode" />
+      <link rel="stylesheet/less" href="/styles/styles.less" />
+      <roundcube:link
+        rel="stylesheet/less"
+        href="/styles/print.less"
+        condition="env:action == 'print'"
+      />
+      <script src="/deps/less.min.js" data-env="development"></script>
+      <roundcube:else />
+      <link rel="stylesheet" href="/styles/styles.min.css" />
+      <link
+        rel="stylesheet"
+        href="/styles/styles-dark.css"
+        id="stylesheet-dark"
+      />
+      <roundcube:link
+        rel="stylesheet"
+        href="/styles/print.min.css"
+        condition="env:action == 'print'"
+      />
+      <roundcube:endif />
+      <script>
+        var rcmail_editor_settings = {
+          content_css: "skins/elastic-dark/styles/oxide-dark.css",
+        };
+      </script>
+      <style>
+        .message-toggle-dark::before {
+          content: "\f6c3";
+        }
+        .message-toggle-light::before {
+          content: "\f185";
+        }
+      </style>
+      <script src="/message-light-mode.js"></script>
+    </head>
+    <body class="task-<roundcube:exp
+      expression="env:error_task ?: env:task ?: 'error'"
+    >
+      action-<roundcube:exp
+        expression="asciiwords(env:action, true, '-') ?: 'none'"
+        >">
+        <roundcube:if condition="!env:framed || env:extwin" />
+        <div id="<roundcube:exp
+          expression="env:action == 'print' ? 'print-' : ''"
+          >layout"> <roundcube:endif /> </roundcube:exp></roundcube:exp
+    ></roundcube:exp>
+  </html>
+</html>
