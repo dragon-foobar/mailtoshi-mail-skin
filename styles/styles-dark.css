@@ -159,7 +159,6 @@ html.layout-phone .popover:not(.select-menu) .listing li:last-child {
 .btn,
 .table,
 .message-partheaders,
-.recipient-input input,
 .form-control-plaintext,
 .html-editor .editor-toolbar .mce-i-html,
 .ui.alert,
@@ -227,6 +226,9 @@ html.layout-phone .popover:not(.select-menu) .listing li:last-child {
 #messagestack .alert-warning > i.icon:before,
 p.image-attachment span {
   color: var(--new-white-1) !important;
+}
+recipient-input input {
+  color: var(--new-black-5) !important;
 }
 #messagestack div,
 #messagestack .loading,
